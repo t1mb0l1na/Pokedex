@@ -1,6 +1,8 @@
 #!/bin/bash
-DATA="data/pokemon.csv"
-REGIONS="data/regions.csv"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DATA="$SCRIPT_DIR/data/pokemon.csv"
+REGIONS="$SCRIPT_DIR/data/regions.csv"
+
 
 print_entry() {
   # takes one CSV row, parses the 7 fields, pretty-prints them
