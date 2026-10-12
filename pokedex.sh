@@ -15,8 +15,8 @@ case "$query" in
   kanto|johto|...)
     # region branch → range lookup → print compact list
 
-	read start end <<< "$(awk -F, -v q="$query" '$1==q {prit $2, $3}' "REGIONS")"
-	awk -F, -v lo="$start" -v hi="$end" 'NR>1 && $1>=lo && $1<=hi {print $1, $2}' "DATA"
+	read start end <<< "$(awk -F, -v q="$query" '$1==q {print $2, $3}' "$REGIONS")"
+	awk -F, -v lo="$start" -v hi="$end" 'NR>1 && $1>=lo && $1<=hi {print $1, $2}' "$DATA"
 	
     ;;
   ''|*[!0-9]*)
