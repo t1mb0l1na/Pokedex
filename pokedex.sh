@@ -6,7 +6,7 @@ REGIONS="$SCRIPT_DIR/data/regions.csv"
 
 print_entry() {
   # takes one CSV row, parses the 7 fields, pretty-prints them
-	:
+	read start end <<< "$(awk -F, -v q="$query" '$1==q {prit $2, $3}' "REGIONS")"
 }
 
 query=$(echo "$1" | tr '[:upper:]' '[:lower:]')
