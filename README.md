@@ -5,7 +5,11 @@ A terminal-based Pokédex. Look up Pokémon by number, name, or region.
 ## Usage
 
 ./pokedex.sh 25          # by dex number
+
+
 ./pokedex.sh pikachu     # by name (case-insensitive)
+
+
 ./pokedex.sh kanto       # list every Pokémon in a region
 
 ## Data
